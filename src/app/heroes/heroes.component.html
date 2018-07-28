@@ -1,0 +1,47 @@
+<!--<h2>{{hero.name}}'s Details</h2>-->
+<!--
+<h2>{{selectedHero.name | uppercase}} Details</h2>
+<div><span>id: </span>{{selectedHero.id}}</div>
+<div><span>name: </span>{{selectedHero.name}}</div>
+<div>
+  <label>Name:
+    <input [(ngModel)]="selectedHero.name" placeholder="Name here">
+  </label>
+</div>
+-->
+
+<!--
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li>
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+-->
+
+<!--
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let aChamp of heroes"
+    [class.selectedElement]="aChamp === selectedHero" 
+    (click)="respondToHeroClick(aChamp)">      *ngFor is the repeater (or forEach) DIRECTIVE
+    <span class="badge">{{aChamp.id}}</span> {{aChamp.name}}
+  </li>
+</ul>
+-->
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let aChamp of heroes">
+    <a routerLink="/detail/{{aChamp.id}}">
+      <span class="badge">{{aChamp.id}}</span> {{aChamp.name}}
+    </a>
+  </li>
+</ul>
+
+<!--[class.selectedElement]="aChamp === selectedHero" means: only apply the selectedElementClass for matching heroes-->
+<!--else remove the class from the element-->
+
+<!--
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+-->
+<!--we just pasted html from another file, wow!-->

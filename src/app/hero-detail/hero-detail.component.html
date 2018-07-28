@@ -1,0 +1,17 @@
+
+<div *ngIf="hero">
+  <!-- since hero stays null until an item is clicked, we need to avoid null using *ngIf-->
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div>
+    <span>id: </span>{{hero.id}}</div>
+  <div>
+    <span>name: </span>{{hero.name}}</div>
+  <div>
+    <label>Name:
+      <input [(ngModel)]="hero.name" placeholder="Name here">
+    </label>
+  </div>
+
+  <button (click)="goBack()">go back</button>
+</div>
+
