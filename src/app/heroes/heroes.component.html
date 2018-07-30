@@ -35,8 +35,19 @@
     <a routerLink="/detail/{{aChamp.id}}">
       <span class="badge">{{aChamp.id}}</span> {{aChamp.name}}
     </a>
+
+    <button class="delete" title="delete hero" (click)="axeAHero(aChamp)">x</button>
+    
   </li>
 </ul>
+
+<div>
+  <label>Hero Name:
+    <input #heroName />
+  </label>
+    <button (click)="saveAHero(heroName.value); heroName.value=''">add hero</button>
+</div>
+
 
 <!--[class.selectedElement]="aChamp === selectedHero" means: only apply the selectedElementClass for matching heroes-->
 <!--else remove the class from the element-->

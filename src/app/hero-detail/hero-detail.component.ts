@@ -28,6 +28,10 @@ export class HeroDetailComponent implements OnInit {
     this.grabAHero();
   }
 
+  saveHero(): void {
+    this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
+  }
+
   grabAHero(): void {
     const id = +this.route.snapshot.paramMap.get('id');   // + converts string from URL to number
     this.heroService.getAndSendOneHero(id)

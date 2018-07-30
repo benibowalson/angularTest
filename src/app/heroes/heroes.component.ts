@@ -40,6 +40,15 @@ export class HeroesComponent implements OnInit {
       .subscribe(receivedHeroes => this.heroes = receivedHeroes); // receivedHeroes is sent by heroService.presentMyHeroes()
   }
 
+  saveAHero(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.heroService.addAHero({ name } as Hero)
+      .subscribe(aHero => {
+        this.heroes.push(aHero);
+      });
+  }
+
   ngOnInit() {
     this.loadMyHeroes();
   }
